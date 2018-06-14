@@ -25,6 +25,7 @@ public class GlobalExceptionHandler {
 				 mv.setViewName(DEFAULT_404_VIEW);
 				 return mv;
 			  }
+			 System.out.println("---500---异常："+exception);
 		     mv.setViewName(DEFAULT_500_VIEW);
 			return mv;
 		} else {

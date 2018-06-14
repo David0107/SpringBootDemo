@@ -21,9 +21,9 @@ public class RecognizeRecordController {
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public RecognizeRecord get(Long recognizeRecordId) {
 		if (!ObjectUtils.isEmpty(recognizeRecordId)) {
-			RecognizeRecord rr = rrs.selectByPrimaryKey(recognizeRecordId);
-			System.out.println("rr:" + rr);
-			return rr;
+			RecognizeRecord r = rrs.selectByPrimaryKey(recognizeRecordId);
+			System.out.println("r:" + r);
+			return r;
 		}
 		System.out.println("recognizeRecordId is null");
 		return null;

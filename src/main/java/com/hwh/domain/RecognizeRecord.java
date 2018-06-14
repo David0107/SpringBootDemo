@@ -1,13 +1,19 @@
 package com.hwh.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 /**
  * 识别记录
- * @author hbpeng
+ * @author Harve
  *
  */
-public class RecognizeRecord {
-    private Long recognizeRecordId;
+public class RecognizeRecord implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Long recognizeRecordId;
 
     private Long orgId;
 
