@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hwh.dao.RecognizeRecordDao" >
+  <resultMap id="BaseResultMap" type="com.hwh.domain.RecognizeRecord" >
+    <id column="recognize_record_id" property="recognizeRecordId" jdbcType="BIGINT" />
+    <result column="org_id" property="orgId" jdbcType="BIGINT" />
+    <result column="org_name" property="orgName" jdbcType="VARCHAR" />
+    <result column="catch_image_url" property="catchImageUrl" jdbcType="VARCHAR" />
+    <result column="match_image_url" property="matchImageUrl" jdbcType="VARCHAR" />
+    <result column="person_id" property="personId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="recognize_user_type" property="recognizeUserType" jdbcType="TINYINT" />
+    <result column="face_pic_id" property="facePicId" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="identity_no" property="identityNo" jdbcType="VARCHAR" />
+    <result column="unique_number" property="uniqueNumber" jdbcType="VARCHAR" />
+    <result column="recognize_time" property="recognizeTime" jdbcType="BIGINT" />
+    <result column="sub_org_id" property="subOrgId" jdbcType="BIGINT" />
+    <result column="sub_org_code" property="subOrgCode" jdbcType="VARCHAR" />
+    <result column="sub_org_remark" property="subOrgRemark" jdbcType="VARCHAR" />
+    <result column="relation_sub_org_remark" property="relationSubOrgRemark" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="quality" property="quality" jdbcType="DOUBLE" />
+    <result column="confidence" property="confidence" jdbcType="DOUBLE" />
+    <result column="recognize_type" property="recognizeType" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    recognize_record_id, org_id, org_name, catch_image_url, match_image_url, person_id, 
+    user_id, recognize_user_type, face_pic_id, mobile, real_name, identity_no, unique_number, 
+    recognize_time, sub_org_id, sub_org_code, sub_org_remark, relation_sub_org_remark, 
+    department, quality, confidence, recognize_type, status, gmt_create, gmt_modify
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from attence_recognize_record
+    where recognize_record_id = #{recognizeRecordId,jdbcType=BIGINT}
+  </select>
+</mapper>
